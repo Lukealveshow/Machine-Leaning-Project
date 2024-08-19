@@ -71,3 +71,13 @@ print('\n---------------\n')
 print('Valores Predetidos para o conjunto de Testes (SVC): \n', y_pred_svc)
 print('Acurácia da Máquina (SVC) = ', metrics.accuracy_score(y_test, y_pred_svc) * 100)
 
+# Comparação entre valores atuais e preditos
+print('\nAtual vs Predito \n-------------------------\n')
+error_df = pd.DataFrame({'Atual': y_test, 'Predito': y_pred_svc})
+print(error_df)
+
+# Matriz de confusão e relatório de classificação para o SVC
+cm_svc = confusion_matrix(y_test, y_pred_svc)
+cr_svc = classification_report(y_test, y_pred_svc)
+print(cm_svc)
+print(cr_svc)
